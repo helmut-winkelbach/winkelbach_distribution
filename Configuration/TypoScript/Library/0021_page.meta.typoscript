@@ -1,0 +1,37 @@
+page.meta {
+	robots=index,follow
+	revisit-after=7
+	language = de
+    author={$page.meta.author}
+	ICBM = {$page.meta.geoPositionLatitude},{$page.meta.geoPositionLongitude}  
+	geoPosition={$page.meta.geoPositionLatitude};{$page.meta.geoPositionLongitude}
+	geoPlacename={$page.meta.geoPlacename}
+	geoRegion={$page.meta.geoRegion}
+	date.data = page:SYS_LASTCHANGED
+	date.field = SYS_LASTCHANGED
+    date.strftime = %d.%m.%Y
+	viewport = width=device-width, initial-scale=1, user-scalable=no
+	author.field = {$page.meta.author}
+	author.ifEmpty = {$page.meta.author}
+	keywords = {$page.meta.keywords}
+    keywords.override.field = keywords
+    google = notranslate
+    og:site_name = {$siteName}
+    og:site_name.attribute = property
+	og:locale = de_DE
+	og:locale.attribute = property 
+    apple-mobile-web-app-capable = apple-mobile-web-app-capable = no
+}
+
+page.headerData.40 = COA
+page.headerData.40 {
+	10 = TEXT
+	10 {
+		typolink.parameter.data = TSFE:id
+		typolink.forceAbsoluteUrl = 1
+		typolink.returnLast = url
+		wrap = <meta property="og:url" content="|">
+	}
+	20 = TEXT
+	20.value = <meta property="og:type" content="website">
+}

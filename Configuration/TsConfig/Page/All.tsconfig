@@ -1,0 +1,9 @@
+#
+# PageTS for winkelbach-distribution
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/User.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/Accordion.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">

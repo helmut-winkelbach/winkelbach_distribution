@@ -1,0 +1,60 @@
+temp.jumbotronbg = IMG_RESOURCE
+temp.jumbotronbg {
+	file {
+		import.data = levelmedia:-1, slide
+		treatIdAsReference = 1
+		import.listNum = rand
+    width = 1920c
+	height = 650
+	}
+}
+
+temp.jumbotronbgxl < temp.jumbotronbg
+temp.jumbotronbgxl {
+  file {
+    width = 1620c
+	height = 500
+  }
+}
+
+temp.jumbotronbgMedium < temp.jumbotronbg
+temp.jumbotronbgMedium {
+  file {
+    width = 1260c
+	height = 400
+  }
+}
+
+temp.jumbotronbgSmall < temp.jumbotronbg
+temp.jumbotronbgSmall {
+  file {
+    width = 800c
+	height = 250 
+  }
+}
+
+temp.jumbotronbgXSmall < temp.jumbotronbg
+temp.jumbotronbgXSmall {
+  file {
+    width = 491c
+	height = 150 
+  }
+}
+
+page.headerData.131313 = COA
+page.headerData.131313 {
+  5 = TEXT
+  5.value = <style type="text/css">
+  10 < temp.jumbotronbgXSmall
+  10.stdWrap.wrap = @media (max-width:481px){.jumbotron { background-image: url(|); background-size: cover;background-position: center; }}
+  20 < temp.jumbotronbgSmall
+  20.stdWrap.wrap = @media (min-width:482px) and (max-width:768px){.jumbotron { background-image: url(|); background-size: cover;background-position: center; }}
+  30 < temp.jumbotronbgMedium
+  30.stdWrap.wrap = @media (min-width:769px) and (max-width:1224px){.jumbotron { background-image: url(|); background-size: cover;background-position: center; }}
+  40 < temp.jumbotronbg
+  40.stdWrap.wrap = @media (min-width:1225px){.jumbotron { background-image: url(|); background-size: cover;background-position: center; }}
+  50 < temp.jumbotronbg
+  50.stdWrap.wrap = @media (min-width:1620px){.jumbotron { background-image: url(|); background-size: cover;background-position: center; }}
+  60 = TEXT
+  60.value = </style>
+}
