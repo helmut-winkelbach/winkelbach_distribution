@@ -21,6 +21,5 @@ $EM_CONF[$_EXTKEY] = array (
    ],
    'conflicts' => [
   ],
-],
-'clearCacheOnLoad' => 1,
+  'clearcacheonload' => true,
 );
