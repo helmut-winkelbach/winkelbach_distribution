@@ -28,7 +28,5 @@ $EM_CONF[$_EXTKEY] = array (
   ),
   ),
   ],
-  'autoload' => [], 
-  'uploadfolder' => false,
   'clearcacheonload' => true,
 );
