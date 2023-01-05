@@ -22,12 +22,5 @@ $EM_CONF[$_EXTKEY] = array (
    'conflicts' => [
   ],
 ],
-'autoload' => [
-  'psr-4' => [
-      'WinkelbachWebdesign\\WinkelbachDistribution\\' => 'Classes',
-  ],
-],
-'uploadfolder' => 0,
-'createDirs' => '',
 'clearCacheOnLoad' => 1,
 );
