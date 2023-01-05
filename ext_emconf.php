@@ -12,21 +12,14 @@ $EM_CONF[$_EXTKEY] = array (
   'author' => 'Helmut Winkelbach',
   'author_email' => 'helmut@winkelbach-web.de',
   'author_company' => '',
-  'version' => '1.4.0',
+  'version' => '1.4.1',
   'constraints' => [
-  array (
-  'depends' => [
+   'depends' => [
     'typo3' => '10.4.0-11.5.99',
     'rte_ckeditor' => '10.4.0-11.5.99',
     'fluid_styled_content' => '10.4.0-11.5.99',
    ],
-  'conflicts' => 
-  array (
-  ),
-  'suggests' => 
-  array (
-  ),
-  ),
+   'conflicts' => [
   ],
   'clearcacheonload' => true,
 );
