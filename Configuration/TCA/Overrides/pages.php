@@ -12,9 +12,9 @@ call_user_func(function()
      * Default PageTS for WinkelbachDistribution
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-        $extensionKey,
-        'Configuration/TsConfig/Page/All.tsconfig',
         'winkelbach-distribution'
+        'Configuration/TsConfig/Page/All.tsconfig',
+        'All-tsconfig'
     );
 /**
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
