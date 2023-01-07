@@ -20,8 +20,3 @@ TCAdefaults.pages.hidden = 0
 TCEMAIN.permissions.groupid = 1
 options.file_list.thumbnail.width = 256
 options.file_list.thumbnail.height = 256
-
-[usergroup = 1]
-###options.hideRecords.pages = 2,3,4,5,11,17,18,19,21
-[GLOBAL]
-
