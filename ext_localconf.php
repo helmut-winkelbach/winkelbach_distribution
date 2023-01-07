@@ -9,6 +9,7 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['winkelbach_distribution'] = 'EXT:
 /***************
  * PageTS
  */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:winkelbach_distribution/Configuration/TsConfig/Page/All.tsconfig">');
 
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 $iconRegistry->registerIcon(
