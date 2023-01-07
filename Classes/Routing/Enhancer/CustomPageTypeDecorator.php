@@ -1,6 +1,6 @@
 <?php
 
-namespace Winkelbach\winkelbach_distribution\Classes\Routing\Enhancer;
+namespace WinkelbachWebdesign\WinkelbachDistribution\Classes\Routing\Enhancer;
 
 use TYPO3\CMS\Core\Routing\Enhancer\PageTypeDecorator;
 use TYPO3\CMS\Core\Routing\RouteCollection;
