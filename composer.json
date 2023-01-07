@@ -22,7 +22,7 @@
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "winkelbach-distribution"
+			"extension-key": "winkelbach_distribution"
 		}
 	}
 }
