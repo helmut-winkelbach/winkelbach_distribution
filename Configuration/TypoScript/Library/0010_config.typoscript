@@ -42,12 +42,12 @@ config {
 	spamProtectEmailAddresses = -2
 	spamProtectEmailAddresses_atSubst = @~@
 #	linkVars = L(1-3), print
-	htmlTag_langKey = de_DE
-	sys_language_uid = 0
-	sys_language_isocode_default = de
-	language = de
-	locale_all = de_DE.UTF-8
-	htmlTag_langKey = de
+#	htmlTag_langKey = de_DE
+#	sys_language_uid = 0
+#	sys_language_isocode_default = de
+#	language = de
+#	locale_all = de_DE.UTF-8
+#	htmlTag_langKey = de
 	htmlTag_setParams = lang="de" dir="ltr" class="no-js"
 	sys_language_mode = strict
 #    sys_language_overlay = auto
