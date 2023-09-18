@@ -154,7 +154,7 @@ page {
         templateRootPath = EXT:winkelbach_distribution/Resources/Private/Templates/Page/
     }
     meta {
-        description = Wir arbeiten für italienische Hersteller, Bereich Land- Obst &amp; Weinbautechnik, Motorgeräten, als Werksvertretung und vertreiben deren Produkte und Ersatzteile
+        description = Wir arbeiten für italienische Hersteller, Bereich Land- Obst- Weinbautechnik, Motorgeräten, als Werksvertretung und vertreiben deren Produkte und Ersatzteile
         author = Gebr. Schmidt Ermstedt Landtechnik - Werksvertretung
         keywords = Landtechnik Werksvertretung Gebr. Schmidt Erfurt-Ermstedt, Landmschinen,Traktoren,Schlepper,Felder und Gärtenmaschinen,Landwirtschaft,Landtechnik,Werksvertretung Obst &amp;amp; Weinbautechnik, Motorgeräte, Ersatzteile
         viewport = width=device-width, initial-scale=1, user-scalable=1
