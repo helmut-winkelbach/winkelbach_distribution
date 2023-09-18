@@ -1439,7 +1439,7 @@ body.lb-disable-scrolling{overflow:hidden}
 .fa-whatsapp:before{content:'\f232'}
 
 a[href^="https://"]:before,a[href^="https://"]:before{content:"\f08e";font-family:FontAwesome;
-font-weight:normal;font-style:normal;display:inline-block;text-decoration:none;padding:0 5px}
+font-weight:normal;font-style:normal;display:inline-block;text-decoration:none;color:#aaa;padding:0 5px}
 
 .entry-meta a{font-weight:400}
 
@@ -1804,6 +1804,7 @@ td{display: table-cell;vertical-align: inherit}
 
 a[href$=".pdf"]:before{width:28px;height:30px;background:url('PDF.png') no-repeat center left;display:inline-block;content:' ';float:left;margin-right:.3em;vertical-align:top}
 
+body.page-291 a[href$=".pdf"]:before{width:28px;height:30px;display:none;content:' ';float:left;margin-right:.3em;vertical-align:top}
 body.page-75 .ce-uploads span{display:inline-block}
 
 @media screen and (max-width:768px){
@@ -1833,3 +1834,18 @@ body.page-75 .ce-uploads span{display:inline-block}
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
 }
 .blogimage img{display:block;margin:auto}
+
+body.page-1 .teaser-text li{list-style-type: none;position: relative;line-height:2}
+/*
+body.page-1 .teaser-text li::before {
+    content: '■';
+    position: absolute;
+    left: 7em; 
+    font-size: 1.1em; 
+}
+*/
+
+.slider-button-prev, .slider-button-next {
+    height: 30px;
+    width: 21px;
+}
