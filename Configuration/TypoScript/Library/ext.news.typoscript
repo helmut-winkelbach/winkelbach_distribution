@@ -8,7 +8,7 @@ plugin.tx_news {
 	settings {
         link.skipControllerAndAction = 1
 		displayDummyIfNoMedia = 1
-		listPid =3
+		listPid =5
 		list.media.dummyImage = {$resDir}/Resources/Public/Images/schmidtermstedt.jpg
 		list.media.image.maxWidth = 320
 		list.media.image.maxHeight = 250	
