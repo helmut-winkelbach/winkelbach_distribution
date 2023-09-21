@@ -6,13 +6,10 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
-                </TCEforms>
                 <type>array</type>
                 <el>
                     <default_element>
-                        <TCEforms>
                             <label>LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion.default_element
                             </label>
                             <config>
@@ -27,7 +24,6 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </default_element>
                 </el>
             </ROOT>
