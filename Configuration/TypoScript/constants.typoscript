@@ -181,10 +181,10 @@ config {
     removeDefaultJS = 0
 #    removeDefaultJS = external
     admPanel = 1
-    prefixLocalAnchors = all
-	headerComment (
-	Konzeption, Layout, Programmierung: www.winkelbach-web.de/sign/
-	)
+#    prefixLocalAnchors = all
+#	headerComment (
+#	Konzeption, Layout, Programmierung: www.winkelbach-web.de/sign/
+#	)
     sendCacheHeaders = 1
     compressJs = 1
     compressCss = 1
