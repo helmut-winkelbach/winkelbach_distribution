@@ -25,12 +25,11 @@
                         </n:titleTag>
                     </f:then>
                     <f:else>
-                        <n:titleTag>{newsItem.title}</n:titleTag>
-
-
+                        <n:titleTag>
+                            <f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
+                        </n:titleTag>
                     </f:else>
                 </f:if>
-
 			</n:format.nothing>
 			<f:if condition="{settings.detail.showPrevNext}">
 				<n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
@@ -55,7 +54,7 @@
 				</n:simplePrevNext>
 			</f:if>
 			<div class="header">
-				<h2 itemprop="headline">{newsItem.title}</h2>
+				<h1 itemprop="headline">{newsItem.title}</h1>
 			</div>
 			<div class="footer">
 				<p>
@@ -63,7 +62,6 @@
 					<span class="news-list-date">
 						<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
 							<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
-
 						</time>
 					</span>
 
@@ -119,14 +117,10 @@
 			</f:if>
 
 			<f:if condition="{settings.detail.showSocialShareButtons}">
-
 				<f:comment>
 					Care about the privacy of your readers?
 					Checkout https://typo3.org/extensions/repository/view/rx_shariff
 					and it will be used automatically!
-
-
-
 				</f:comment>
 				<n:extensionLoaded extensionKey="rx_shariff">
 					<f:render partial="Detail/Shariff" />
