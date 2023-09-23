@@ -20,7 +20,7 @@ config {
     linkVars = L
     prefixLocalAnchors = {$config.prefixLocalAnchors}
     renderCharset = utf-8
-    metaCharset = utf-8
+#    metaCharset = utf-8
     doctype = html5
     removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
