@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Extension Manager/Repository config file for ext "winkelbach_distribution".
- */
-$EM_CONF[$_EXTKEY] = array (
+ * Extension Manager/Repository config file for ext "winkelbach_distribution". */
+ 
+$EM_CONF[$_EXTKEY] = [
   'title' => 'winkelbach-distribution',
   'description' => 'Sitepackage',
   'category' => 'templates',
@@ -20,4 +20,4 @@ $EM_CONF[$_EXTKEY] = array (
    ],
    'conflicts' => [ ],
   ],
-);
+];
