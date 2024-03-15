@@ -20,7 +20,9 @@ $iconRegistry->registerIcon(
 );
 $icons = [
     'timeline',
-    'timeline-item'
+    'timeline-item',
+    'accordion',
+    'accordion-item'
 ];
 foreach ($icons as $icon) {
     $iconRegistry->registerIcon(

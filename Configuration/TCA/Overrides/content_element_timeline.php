@@ -1,53 +1,44 @@
 <?php
 
 /*
- * This file is modified part of the package bk2k/bootstrap-package.
+ * This file is part of the  winkelbach_distribution.
  *
  * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code. 
+ * LICENSE file that was distributed with this source code.
  */
 
-defined('TYPO3') || die();
+defined('TYPO3') or die('Access denied.');
 
-/***************
- * Add Content Element
- */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['timeline'])) {
+// Add Content Element
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['timeline'] ?? false)) {
     $GLOBALS['TCA']['tt_content']['types']['timeline'] = [];
 }
 
-/***************
- * Add content element PageTSConfig
- * *
+// Add content element PageTSConfig
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-    $extensionKey,
-    'Configuration/TsConfig/Timeline.tsconfig',
-    'EXT:winkelbach_distribution :: Timeline'
+    'bootstrap_package',
+    'Configuration/TsConfig/Page/Timeline.tsconfig',
+    'Bootstrap Package Content Element: Timeline'
 );
 
-/***************
- * Add content element to selector list
- */
+// Add content element to selector list
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
         'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:content_element.timeline',
         'timeline',
-        'content-bootstrappackage-timeline'
+        'content-bootstrappackage-timeline',
+        'bootstrap_package'
     ],
     'textteaser',
     'after'
 );
 
-/***************
- * Assign Icon
- */
+// Assign Icon
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['timeline'] = 'content-bootstrappackage-timeline';
 
-/***************
- * Configure element type
- */
+// Configure element type
 $GLOBALS['TCA']['tt_content']['types']['timeline'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['types']['timeline'],
     [
@@ -75,9 +66,7 @@ $GLOBALS['TCA']['tt_content']['types']['timeline'] = array_replace_recursive(
     ]
 );
 
-/***************
- * Register fields
- */
+// Register fields
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
     [
@@ -92,7 +81,6 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                     'showSynchronizationLink' => true,
                     'showAllLocalizationLink' => true,
                     'showPossibleLocalizationRecords' => true,
-                    'showRemovedLocalizationRecords' => false,
                     'expandSingle' => true,
                     'enabledControls' => [
                         'localize' => true,
@@ -100,16 +88,13 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 ],
                 'behaviour' => [
                     'mode' => 'select',
-                    'localizeChildrenAtParentLocalization' => true,
                 ]
             ]
         ]
     ]
 );
 
-/***************
- * Add flexForms for content element configuration
- */
+// Add flexForms for content element configuration
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     '*',
     'FILE:EXT:winkelbach_distribution/Configuration/FlexForms/Timeline.xml',

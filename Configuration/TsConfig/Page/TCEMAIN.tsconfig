@@ -14,6 +14,7 @@ TCEMAIN {
    }
 }
 
+/*
 TCEMAIN.table.tt_content {
 disablePrependAtCopy = 1
 disableHideAtCopy = 1
@@ -31,8 +32,9 @@ TCEMAIN.linkHandler {
         addParams = onclick="jumpToUrl('?act=url&linkAttributes[target]=_blank&linkAttributes[title]=Öffnet den externen Link in einem neuen Fenster&linkAttributes[class]=externalLink&linkAttributes[params]=');return false;"
 #        addParams = onclick="jumpToUrl('?act=url&linkAttributes[target]=_blank&linkAttributes[title]=Opens external link in new window&linkAttributes[class]=externalLink&linkAttributes[params]=');return false;"
     }
-    email {
+    mail {
         addParams = onclick="jumpToUrl('?act=mail&linkAttributes[title]=Öffnet den E-Mail-Manager zum Senden einer E-Mail&linkAttributes[class]=mail&linkAttributes[params]=');return false;"
 #        addParams = onclick="jumpToUrl('?act=mail&linkAttributes[title]=Opens email manager to send an email&linkAttributes[class]=mail&linkAttributes[params]=');return false;"
     }
 }
+*/

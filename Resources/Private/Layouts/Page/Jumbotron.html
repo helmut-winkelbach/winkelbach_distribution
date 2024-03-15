@@ -1,5 +1,5 @@
 <div class="pageheader container">
-  <a href="#" class="scrollToTop fa fa-chevron-up fa-lg fa-2x"></a>
+  <a href="#" class="scrollToTop fa fa-chevron-up fa-lg"></a>
 	<div class="row">
 		<div class="mainnav">
 			<nav class="main-nav container" role="navigation">
@@ -11,6 +11,9 @@
 			</nav>
 		</div>
 			<f:render partial="SearchForm"/> 
+			<f:if condition="{languageMenu}">
+        <f:render partial="LanguageMenu" arguments="{_all}" />
+			</f:if>
 	</div>
 </div>
 		<f:render section="Jumbotron"/>
@@ -26,10 +29,10 @@
 <div class="container maincontent2">
 	<div class="row">
 		<div class="col-md-4">
-    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1', slide: '-1'}" />
 		</div>
 		<div class="col-md-4">
-    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '3'}" />
+    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '3', slide: '-1'}" />
 		</div>
 		<div class="col-md-4">
     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2', slide: '-1'}" />

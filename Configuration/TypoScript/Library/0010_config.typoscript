@@ -5,10 +5,10 @@ config.additionalHeaders {
   40.header = X-Powered-By: nothing
   50.header = strict-transport-security: max-age=31536000; includeSubDomains; preload;
   60.header = Referrer-Policy: strict-origin
-#  70.header = Content-Security-Policy: script-src 'self'; style-src 'self'
-#  80.header = Permissions-Policy: fullscreen=(self "https://www.schmidtermstedt.de"), geolocation=*, camera=()
+#  70.header = Content-Security-Policy: default-src 'unsafe-inline' 'unsafe-eval'; script-src 'unsafe-inline' 'unsafe-eval' https://www.1.winkelbach-web.de; font-src data: 'self'; style-src 'unsafe-inline' https://www.1.winkelbach-web.de; img-src 'self' 'unsafe-inline'; frame-src https://www.1.winkelbach-web.de; connect-src https://www.1.winkelbach-web.de
+  80.header = Permissions-Policy: fullscreen=(self "https://www.winkelbach-web.de"), geolocation=*, camera=()
+#  90.header = X-Robots-Tag: noindex,nofollow
 }
-
 
 #### CONFIG ####
 config {
@@ -18,21 +18,21 @@ config {
     uniqueLinkVars = 1
     pageTitleFirst = 1
     linkVars = L
-#    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
     renderCharset = utf-8
-#    metaCharset = utf-8
+    metaCharset = utf-8
     doctype = html5
     removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
     admPanel = {$config.admPanel}
     debug = 0
-    cache_period = 86400
+    cache_period = 2592000
     sendCacheHeaders = {$config.sendCacheHeaders}
     intTarget =
-    extTarget =
+    extTarget = _blank
     disablePrefixComment = 1
     index_enable = 1
-    index_externals = 0
+    index_externals = 1
     index_metatags = 0
     headerComment = {$config.headerComment}
     noScaleUp = 1
@@ -42,26 +42,52 @@ config {
 	spamProtectEmailAddresses = -2
 	spamProtectEmailAddresses_atSubst = @~@
 #	linkVars = L(1-3), print
-#	htmlTag_langKey = de_DE
 #	sys_language_uid = 0
-#	sys_language_isocode_default = de
-#	language = de
-#	locale_all = de_DE.utf-8
-#	htmlTag_langKey = de
-	htmlTag_setParams = lang="de" dir="ltr" class="no-js"
-	sys_language_mode = strict
+#  language = de
+#  locale_all = de_DE.UTF8
+#  sys_language_isocode = de
+#  htmlTag_langKey = de
+  htmlTag_setParams = lang="de" dir="ltr" class="no-js"
+  headerComment (
+  Konzept, Design & Programmierung: www.winkelbach-web.de/
+ )
+
+#	sys_language_mode = free 
 #    sys_language_overlay = auto
-    sys_language_overlay = hideNonTranslated
-	sys_language_softMergeIfNotBlank = tt_content:assets,pages:media
+#    sys_language_overlay = hideNonTranslated
+#	sys_language_softMergeIfNotBlank = tt_content:assets,pages:media
 	typolinkDisableLinksToNonTranslatedPages = 1
 	compressJs = {$config.compressJs}
 	compressCss = {$config.compressCss}
 	concatenateJs = {$config.concatenateJs}
 	concatenateCss = {$config.concatenateCss}
-	preloadImages = 0
-#	noPageTitle = 2
+#	preloadImages = 0
+	noPageTitle = 2
 	htmlSpecialChars = 1
 	pageTitleSeparator = -
 	pageTitleSeparator.noTrimWrap = | | |
     moveJsFromHeaderToFooter = 1
 }
+
+[siteLanguage("locale") == "en_EN.UTF8"]
+[siteLanguage("title") == "English"]
+    config {
+	htmlTag_langKey = en
+	htmlTag_setParams = lang="en"  dir="ltr" class="no-js"
+
+headerComment (
+ Concept, Design & Programming: www.winkelbach-web.de/
+ )
+}
+[GLOBAL]
+
+[siteLanguage("locale") == "ru_RU.UTF8"]
+[siteLanguage("title") == "Русский"]
+    config {
+htmlTag_langKey = ru
+htmlTag_setParams = lang="ru" dir="ltr" class="no-js"
+headerComment (
+ Концепция, дизайн и программирование: www.winkelbach-web.de/
+ )
+}
+[GLOBAL]

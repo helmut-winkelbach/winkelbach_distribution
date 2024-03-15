@@ -11,12 +11,11 @@ finishers:
       subject: '{text-2} möchte die neuen Blog-Artikel erhalten'
       senderAddress: '{text-2}'
       senderName: ''
-      replyToAddress: ''
       attachUploads: false
       templateRootPaths:
         20: 'EXT:winkelbach_distribution/Resources/Private/Frontend/Templates/Finishers/Email/Receiver/'
       translation:
-        language: ''
+        language: default
       recipients:
         info@winkelbach-web.de: 'Bahá’í-Gemeinde Erfurt'
       addHtmlPart: true
@@ -26,12 +25,11 @@ finishers:
       subject: 'Bahá’í-Erfurt: Ich möchte die neuen Blog-Artikel erhalten'
       senderAddress: '{text-2}'
       senderName: '{text-2}'
-      replyToAddress: ''
       attachUploads: false
       templateRootPaths:
         20: 'EXT:winkelbach_distribution/Resources/Private/Frontend/Templates/Finishers/Email/Sender/'
       translation:
-        language: ''
+        language: default
       recipients:
         '{text-2}': '{text-2}'
       addHtmlPart: true

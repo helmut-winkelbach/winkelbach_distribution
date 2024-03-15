@@ -1,53 +1,42 @@
 <?php
 
 /*
- * This file is modified part of the package bk2k/bootstrap-package.
+ * This file is part of the package bk2k/bootstrap-package.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
 
-defined('TYPO3') || die();
+defined('TYPO3') or die('Access denied.');
 
-/***************
- * Add Content Element
- */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['accordion'])) {
+// Add Content Element
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['accordion'] ?? false)) {
     $GLOBALS['TCA']['tt_content']['types']['accordion'] = [];
 }
 
-/***************
- * Add content element PageTSConfig
- *
+// Add content element PageTSConfig
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-    $extensionKey,
-    'Configuration/TsConfig/Page/Accordion.tsconfig',
+    'bootstrap_package',
+    'Configuration/TsConfig/Page/ContentElement/Element/Accordion.tsconfig',
     'Bootstrap Package Content Element: Accordion'
 );
 
-/***************
- * Add content element to selector list
- */
+// Add content element to selector list
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
         'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:content_element.accordion',
         'accordion',
-        'content-bootstrappackage-accordion'
-    ],
-    '--div--',
-    'after'
+        'content-bootstrappackage-accordion',
+        'bootstrap_package'
+    ]
 );
 
-/***************
- * Assign Icon
- */
+// Assign Icon
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['accordion'] = 'content-bootstrappackage-accordion';
 
-/***************
- * Configure element type
- */
+// Configure element type
 $GLOBALS['TCA']['tt_content']['types']['accordion'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['types']['accordion'],
     [
@@ -55,9 +44,10 @@ $GLOBALS['TCA']['tt_content']['types']['accordion'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+                subitems_header_layout,
                 tx_bootstrappackage_accordion_item,
             --div--;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion.options,
-                pi_flexform;LLL:winkelbach_distribution/Resources/Private/Language/Backend.xlf:advanced,
+                pi_flexform;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:advanced,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -75,9 +65,7 @@ $GLOBALS['TCA']['tt_content']['types']['accordion'] = array_replace_recursive(
     ]
 );
 
-/***************
- * Register fields
- */
+// Register fields
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
     [
@@ -92,7 +80,6 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                     'showSynchronizationLink' => true,
                     'showAllLocalizationLink' => true,
                     'showPossibleLocalizationRecords' => true,
-                    'showRemovedLocalizationRecords' => false,
                     'expandSingle' => true,
                     'enabledControls' => [
                         'localize' => true,
@@ -106,9 +93,7 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     ]
 );
 
-/***************
- * Add flexForms for content element configuration
- */
+// Add flexForms for content element configuration
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     '*',
     'FILE:EXT:winkelbach_distribution/Configuration/FlexForms/Accordion.xml',

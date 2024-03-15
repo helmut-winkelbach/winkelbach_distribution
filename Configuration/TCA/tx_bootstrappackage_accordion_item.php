@@ -1,17 +1,6 @@
 <?php
 
-/*
- * This file is part of the package bk2k/bootstrap-package.
- *
- * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code.
- */
-
-if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('lang')) {
-    $generalLanguageFile = 'EXT:lang/Resources/Private/Language/locallang_general.xlf';
-} else {
-    $generalLanguageFile = 'EXT:core/Resources/Private/Language/locallang_general.xlf';
-}
+$GLOBALS['TCA']['tx_bootstrappackage_accordion_item']['ctrl']['security']['ignorePageTypeRestriction'] = true;
 
 return [
     'ctrl' => [
@@ -20,14 +9,13 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'title' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
         'hideTable' => true,
         'hideAtCopy' => true,
-        'prependAtCopy' => 'LLL:' . $generalLanguageFile . ':LGL.prependAtCopy',
+        'prependAtCopy' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'languageField' => 'sys_language_uid',
@@ -39,14 +27,6 @@ return [
         'typeicon_classes' => [
             'default' => 'content-bootstrappackage-accordion-item',
         ]
-    ],
-    'interface' => [
-        'showRecordFieldList' => '
-            hidden,
-            tt_content,
-            header,
-            bodytext
-        ',
     ],
     'types' => [
         '1' => [
@@ -111,22 +91,24 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.hidden',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
                 'items' => [
                     '1' => [
-                        '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0'
+                        'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                        'value' => 0,
                     ]
                 ]
             ]
         ],
         'starttime' => [
             'exclude' => true,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.starttime',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'inputDateTime',
+                'renderType' => 'datetime',
                 'eval' => 'datetime',
                 'default' => 0
             ],
@@ -135,10 +117,10 @@ return [
         ],
         'endtime' => [
             'exclude' => true,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.endtime',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'inputDateTime',
+                'renderType' => 'datetime',
                 'eval' => 'datetime',
                 'default' => 0,
                 'range' => [
@@ -150,36 +132,19 @@ return [
         ],
         'sys_language_uid' => [
             'exclude' => 1,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.language',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'sys_language',
-                'foreign_table_where' => 'ORDER BY sys_language.title',
-                'items' => [
-                    [
-                        'LLL:' . $generalLanguageFile . ':LGL.allLanguages',
-                        -1
-                    ],
-                    [
-                        'LLL:' . $generalLanguageFile . ':LGL.default_value',
-                        0
-                    ]
-                ],
-                'allowNonIdValues' => true,
-            ]
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'config' => ['type' => 'language']
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        '',
-                        0
+                        'label' => '',
+                        'value' => 0
                     ]
                 ],
                 'foreign_table' => 'tx_bootstrappackage_accordion_item',
@@ -198,7 +163,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim,required'
+                'eval' => 'trim'
             ],
         ],
         'bodytext' => [
@@ -209,56 +174,17 @@ return [
                 'type' => 'text',
                 'cols' => '80',
                 'rows' => '15',
-                'softref' => 'typolink_tag,images,email[subst],url',
+                'softref' => 'typolink_tag,email[subst],url',
                 'enableRichtext' => true
             ],
         ],
         'media' => [
             'exclude' => true,
             'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.media',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'media',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.audioOverlayPalette;audioOverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ]
-                        ]
-                    ]
-                ],
-                $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
-            ),
+            'config' => [
+                'type' => 'file',
+                'allowed' => 'common-image-types',
+            ],
         ],
         'mediaorient' => [
             'exclude' => 1,
@@ -268,20 +194,20 @@ return [
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.left',
-                        'left'
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.left',
+                        'value' => 'left'
                     ],
                     [
-                        'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.top',
-                        'top'
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.top',
+                        'value' => 'top'
                     ],
                     [
-                        'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.right',
-                        'right'
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.right',
+                        'value' => 'right'
                     ],
                     [
-                        'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.bottom',
-                        'bottom'
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.bottom',
+                        'value' => 'bottom'
                     ],
                 ],
                 'default' => 'left',
@@ -296,28 +222,28 @@ return [
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        '1',
-                        1
+                        'label' => '1',
+                        'value' => 1
                     ],
                     [
-                        '2',
-                        2
+                        'label' => '2',
+                        'value' => 2
                     ],
                     [
-                        '3',
-                        3
+                        'label' => '3',
+                        'value' => 3
                     ],
                     [
-                        '4',
-                        4
+                        'label' => '4',
+                        'value' => 4
                     ],
                     [
-                        '5',
-                        5
+                        'label' => '5',
+                        'value' => 5
                     ],
                     [
-                        '6',
-                        6
+                        'label' => '6',
+                        'value' => 6
                     ]
                 ],
                 'default' => 2
@@ -331,8 +257,8 @@ return [
                 'type' => 'check',
                 'items' => [
                     [
-                        0 => '',
-                        1 => '',
+                        'label' => 'enable zoom',
+                        'value' => '',
                     ]
                 ],
             ]

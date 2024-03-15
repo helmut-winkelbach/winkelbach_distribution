@@ -1,9 +1,11 @@
 <?php
-defined('TYPO3') || die();
-
-call_user_func(function() {
- 
-     $extensionKey = 'winkelbach_distribution';
+defined('TYPO3') or die('Access denied.');
+call_user_func(function()
+{
+    /**
+     * Temporary variables
+     */
+    $extensionKey = 'winkelbach_distribution';
 
     /**
      * Default PageTS for WinkelbachDistribution
@@ -11,16 +13,14 @@ call_user_func(function() {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
         $extensionKey,
         'Configuration/TsConfig/Page/All.tsconfig',
-        'Winkelbach Distribution'
+        'Winkelbach-Distribution'
     );
-/**
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     $extensionKey,
     'Configuration/TsConfig/Timeline.tsconfig',
-    'EXT:winkelbach_distribution :: Timeline'
+    'EXT:winkelbach_distribution :: Timeline',
     'Configuration/TsConfig/Accordion.tsconfig',
     'EXT:winkelbach_distribution :: Accordion'
-
-);
-**/
+    );
 });

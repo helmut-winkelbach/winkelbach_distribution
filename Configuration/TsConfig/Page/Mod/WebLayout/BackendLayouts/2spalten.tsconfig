@@ -7,14 +7,14 @@ mod {
         title = LLL:EXT:winkelbach_distribution/Resources/Private/Language/locallang_be.xlf:backend_layout.2spalten
         config {
           backend_layout {
-            colCount = 4
+            colCount = 3
             rowCount = 4
             rows {
             1 {
              columns {
               1 {
                 name = Jumbotron
-                colspan = 4
+                colspan = 3
                 colPos = 4
                 }
               }
@@ -23,7 +23,7 @@ mod {
             columns {
               1 {
                 name = Main Content
-                colspan = 3
+                colspan = 2
                 colPos = 0
               }
               2 {
@@ -43,12 +43,8 @@ mod {
                  colPos = 3
                }
                3 {
-                 name = Midle2 Bottom
-                 colPos = 2
-               }
-               4 {
                  name = Right Bottom
-                 colPos = 5
+                 colPos = 2
                  }
                }
              }
@@ -56,8 +52,8 @@ mod {
              columns {
                1 {
                 name = Content Bottom
-                colspan = 4
-                 colPos = 7
+                colspan = 3
+                colPos = 5
                 }
               }
             }

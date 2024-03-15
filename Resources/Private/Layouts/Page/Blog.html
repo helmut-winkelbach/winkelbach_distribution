@@ -1,5 +1,5 @@
 <div class="pageheader container">
-  <a href="#" class="scrollToTop fa fa-chevron-up fa-lg fa-2x"></a>
+  <a href="#" class="scrollToTop fa fa-chevron-up fa-lg aria-label=ScrollToTop"></a>
 	<div class="row">
 		<div class="mainnav">
 			<nav class="main-nav container" role="navigation">
@@ -11,6 +11,9 @@
 			</nav>
 		</div>
 			<f:render partial="SearchForm"/> 
+			<f:if condition="{languageMenu}">
+        <f:render partial="LanguageMenu" arguments="{_all}" />
+			</f:if>
 	</div>
 </div>
 		<f:render section="Blog"/>

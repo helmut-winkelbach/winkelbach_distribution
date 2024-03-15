@@ -15,9 +15,6 @@
             <trans-unit id="backend_layout.2spalten">
                 <source>2Spalten</source>
             </trans-unit>
-            <trans-unit id="backend_layout.2spalten-rl">
-                <source>2Spalten-rl</source>
-            </trans-unit>
             <trans-unit id="backend_layout.jumbotron">
                 <source>Jumbotron</source>
             </trans-unit>

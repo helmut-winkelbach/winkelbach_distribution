@@ -1,6 +1,8 @@
 ##Page TS
 TCEFORM.tt_content {
-   header_layout{
+#	tx_t3sbootstrap_header_fontawesome {
+#	}
+  header_layout{
     altLabels {
 #      0 = h2 - Themenueberschrift Standart
        1 = h1 - Seitenueberschrift
@@ -10,7 +12,7 @@ TCEFORM.tt_content {
        5 = h5 - Ueberschrift 5.Ordnung
 	   }
 #    addItems.303 = Hello Header
-    removeItems = 0
+    removeItems = 0,5,6
     }
 	layout.addItems {
 		4 = Mein Layout
@@ -45,7 +47,11 @@ TCEFORM.tt_content.frame_class.addItems {
 }
 */
 
-TCAdefaults.sys_file_reference.showinpreview = 1
+#TCAdefaults.sys_file_reference.showinpreview = 1
+
+TCAdefaults.tt_content.image_zoom = 1
+TCAdefaults.tt_content.imagecols = 1
+
 
 ### Set the default image orientation (Nr. 26)
 mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.imageorient = 17
