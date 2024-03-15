@@ -1,6 +1,8 @@
 # Default PAGE object:
 config.contentObjectExceptionHandler = 0
 page = PAGE
+
+
 page.headerData.23471 >
 page.headerData.23471 = COA
 page.headerData.23471 {
@@ -81,6 +83,7 @@ page {
 shortcutIcon = {$resDir}/Resources/Public/Icons/appicon-square.png 
 }
 
+/*
 page {
   headerData {
     19120 = TEXT
@@ -97,11 +100,11 @@ page {
     19120 = TEXT
     19120 {
       field = title
-      noTrimWrap = |<title> | - Gebr. Schmidt GbR</title>|
+      noTrimWrap = |<title> | - Winkelbach-Webdesign</title>|
     }
   }
 }
-[end]
+[GLOBAL]
 
 [PIDinRootline = 34,36,37,42,43,45,49,50,51,53,54,63,62,68,75,79,80,86,88,90,107,108]
 page {
@@ -109,12 +112,40 @@ page {
     19120 = TEXT
     19120 {
       field = title
-      noTrimWrap = |<title> | - Erfurt</title>|
+      noTrimWrap = |<title> | - Winkelbach-Webdesign</title>|
     }
   }
 }
-[end]
 */
+[GLOBAL]
+[siteLanguage("locale") == "en_EN.UTF-8"]
+[siteLanguage("title") == "English"]
+page {
+    headerData {
+     120 = TEXT
+     120 {
+		value = {$siteTitle} {TSFE:page|title}
+      field = title
+      noTrimWrap = |<title>| - History of the Baha’i Faith in Belarus</title>
+    }
+  }
+}
+[GLOBAL]
+
+[siteLanguage("locale") == "ru_RU.UTF-8"]
+[siteLanguage("title") == "Русский"]
+page {
+    headerData {
+     120 = TEXT
+     120 {
+		value = {$siteTitle} {TSFE:page|title}
+      field = title
+      noTrimWrap = |<title>| - История Веры Бахаи в Беларуси</title>
+    }
+  }
+}
+[GLOBAL]
+
 lib.stdheader.stdWrap.dataWrap >
 lib.stdheader.10.1.dataWrap = <h1>|</h1>
 lib.stdheader.10.2.dataWrap = <h2>|</h2>
@@ -134,18 +165,48 @@ tt_content.uploads.20.renderObj.30.br = 1
 page.301 = TEXT
 page.301.value (
 <noscript>
- <div id="noscript-hint">Bitte aktivieren Sie Javascript in Ihrem Browser</div>
+ <div id="noscript-hint">Please activate Javascript in your browser</div>
 </noscript>
 )
 
 	Logo = IMAGE
 	Logo {
+    altText ="A Brief History of the Baha’i Faith in Belarus"
 		imageLinkWrap = 1
 		imageLinkWrap.enable = 1
-		imageLinkWrap.typolink.parameter = t3://page?uid=1
-		file = {$resDir}/Resources/Public/Images/logo-schmidtermstedt.png
-		file.width = 220c
-		file.height = 141c
+		imageLinkWrap.typolink.parameter = t3://page?uid={$rootId}
+    file = {$resDir}/Resources/Public/Images/vera-bakhai-v-belarusi.png
+		file.width = 50c
+		file.height = 51c
 		altText = {$siteName}
-		imageLinkWrap.typolink.title = {$siteName}
+		imageLinkWrap.typolink.title = "A Brief History of the Baha’i Faith in Belarus"
 		}
+    
+[siteLanguage("locale") == "de_DE.UTF-8"]
+	Logo = IMAGE
+	Logo {
+    altText ="A Brief History of the Baha’i Faith in Belarus"
+		imageLinkWrap = 1
+		imageLinkWrap.enable = 1
+		imageLinkWrap.typolink.parameter = t3://page?uid={$rootId}
+    file = {$resDir}/Resources/Public/Images/vera-bakhai-v-belarusi.png
+		file.width = 50c
+		file.height = 51c
+		imageLinkWrap.typolink.title = "A Brief History of the Baha’i Faith in Belarus"
+		}
+[GLOBAL]
+    
+[siteLanguage("locale") == "ru_RU.UTF-8"]
+	Logo = IMAGE
+	Logo {
+    altText = "Краткая история Веры Бахаи в Беларуси"
+		imageLinkWrap = 1
+		imageLinkWrap.enable = 1
+		imageLinkWrap.typolink.parameter = t3://page?uid={$rootId}
+    file = {$resDir}/Resources/Public/Images/vera-bakhai-v-belarusi.png
+		file.width = 50c
+		file.height = 51c
+		imageLinkWrap.typolink.title = Краткая история Веры Бахаи в Беларуси
+		}
+[GLOBAL]
+

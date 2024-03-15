@@ -4,7 +4,7 @@
             <f:render partial="General/FeaturedImage" arguments="{image: post.featuredImage, settings: settings.lists.featuredImage}" />
         </blogvh:link.post>
     </f:if>
-    <h2 class="postlist__posttitle" itemprop="name"><blogvh:link.post post="{post}" /></h2>
+    <h3 class="postlist__posttitle" itemprop="name"><blogvh:link.post post="{post}" /></h3>
     <f:render partial="Meta/ListHeader" arguments="{_all}" />
     <f:if condition="{post.abstract}">
         <f:then>

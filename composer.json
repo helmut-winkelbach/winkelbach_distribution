@@ -1,29 +1,36 @@
 {
-	"name": "winkelbach-webdesign/winkelbach_distribution",
-	"type": "typo3-cms-extension",
-	"description": "Sitepackage",
-	"homepage": "https://github.com/helmut-winkelbach/winkelbach_distribution",
-	"license": ["GPL-2.0-or-later"],
-	"keywords": ["TYPO3 distribution"],
-	"authors": [
-		{
-			"name": "Helmut Winkelbach"
-		}
-	],
-	"require": {
-		"typo3/cms-core": "^11.5 || ^12.4",
-		"typo3/cms-rte-ckeditor": "^11.5 || ^12.4",
-		"typo3/cms-fluid-styled-content": "^11.5 || ^12.4"
-	},
-	"autoload": {
-		"psr-4": {
-			"WinkelbachWebdesign\\WinkelbachDistribution\\": "Classes/"
-		}
-	},
-	"extra": {
-		"typo3/cms": {
-			"extension-key": "winkelbach_distribution",
-        		"web-dir": ".Build/public"
-		}
-	}
+    "name": "winkelbach-webdesign/winkelbach-distribution",
+    "description": "Sitepackage",
+    "type": "typo3-cms-extension",
+    "authors": [
+        {
+            "name": "Helmut Winkelbach",
+            "role": "Developer"
+        }
+    ],
+    "license": [
+        "MIT"
+    ],
+    "keywords": [
+        "TYPO3 CMS",
+        "Sitepackage"
+    ],
+    "require": {
+        "typo3/cms-core": "^11.5 || ^12.4",
+        "typo3/cms-core": "^11.5 || ^12.4",
+        "typo3/cms-frontend": "^11.5 || ^12.4",
+        "typo3/cms-rte-ckeditor": "^11.5 || ^12.4",
+        "typo3/cms-fluid-styled-content": "^11.5 || ^12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "WinkelbachWebdesign\\WinkelbachDistribution\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "winkelbach_distribution",
+            "web-dir": ".Build/public"
+        }
+    }
 }

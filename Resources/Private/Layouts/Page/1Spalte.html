@@ -1,6 +1,6 @@
 <div class="pageheader container">
-  <a href="#" class="scrollToTop fa fa-chevron-up fa-lg fa-2x"></a>
-	<div class="row">
+ <a href="#" class="scrollToTop fa fa-chevron-up fa-lg"></a>
+  <div class="row">
 		<div class="mainnav">
 			<nav class="main-nav container" role="navigation">
 				<input id="main-menu-state" type="checkbox"/>
@@ -11,6 +11,9 @@
 			</nav>
 		</div>
 			<f:render partial="SearchForm"/> 
+			<f:if condition="{languageMenu}">
+        <f:render partial="LanguageMenu" arguments="{_all}" />
+			</f:if>
 	</div>
 </div>
 		<f:render section="1Spalte"/>

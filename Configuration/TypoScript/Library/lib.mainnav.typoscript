@@ -1,6 +1,6 @@
 lib.mainnav = HMENU
 lib.mainnav {
-	wrap = <ul id="main-menu" class="sm sm-simple" label="Navigation">|</ul>
+	wrap = <ul id="main-menu" class="sm sm-simple">|</ul>
 
 	1 = TMENU
 	1 {

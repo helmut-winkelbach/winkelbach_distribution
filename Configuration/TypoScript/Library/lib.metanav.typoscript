@@ -2,7 +2,7 @@ lib.metanav = HMENU
 lib.metanav {
 	wrap = <ul class="metanav text-md-right">|</ul>
 	special = directory
-	special.value = 23
+	special.value = 39
 	1 = TMENU
 	1 {
 		NO = 1
