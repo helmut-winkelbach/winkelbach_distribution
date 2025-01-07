@@ -19,8 +19,6 @@ call_user_func(function()
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     $extensionKey,
     'Configuration/TsConfig/Timeline.tsconfig',
-    'EXT:winkelbach_distribution :: Timeline',
-    'Configuration/TsConfig/Accordion.tsconfig',
-    'EXT:winkelbach_distribution :: Accordion'
+    'EXT:winkelbach_distribution :: Timeline'
     );
 });

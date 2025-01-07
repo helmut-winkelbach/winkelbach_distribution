@@ -3,7 +3,7 @@ lib.copyright = COA
 lib.copyright {
   stdWrap.innerWrap = <div class="copyright">|</div>
   10 = TEXT
-  10.value = &copy; 2022 -&nbsp;
+  10.value = &copy; 2006 -&nbsp;
   11 = TEXT
   11.data = date:U
   11.strftime =%Y

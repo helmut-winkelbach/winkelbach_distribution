@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the  winkelbach_distribution.
+ * This file is part of the package bk2k/bootstrap-package.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
@@ -17,7 +17,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['timeline'] ?? false)) {
 // Add content element PageTSConfig
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'bootstrap_package',
-    'Configuration/TsConfig/Page/Timeline.tsconfig',
+    'Configuration/TsConfig/Page/ContentElement/Element/Timeline.tsconfig',
     'Bootstrap Package Content Element: Timeline'
 );
 
@@ -26,10 +26,11 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['timeline'] ?? false)) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:content_element.timeline',
-        'timeline',
-        'content-bootstrappackage-timeline',
-        'bootstrap_package'
+        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:content_element.timeline',
+        'description' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:content_element.timeline.description',
+        'value' =>'timeline',
+        'icon' => 'content-bootstrappackage-timeline',
+        'group' => 'bootstrap_package',
     ],
     'textteaser',
     'after'
@@ -46,6 +47,7 @@ $GLOBALS['TCA']['tt_content']['types']['timeline'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+                subitems_header_layout,
                 tx_bootstrappackage_timeline_item,
             --div--;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline.options,
                 pi_flexform;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:advanced,
@@ -62,7 +64,7 @@ $GLOBALS['TCA']['tt_content']['types']['timeline'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ]
 );
 
@@ -84,13 +86,13 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                     'expandSingle' => true,
                     'enabledControls' => [
                         'localize' => true,
-                    ]
+                    ],
                 ],
                 'behaviour' => [
                     'mode' => 'select',
-                ]
-            ]
-        ]
+                ],
+            ],
+        ],
     ]
 );
 

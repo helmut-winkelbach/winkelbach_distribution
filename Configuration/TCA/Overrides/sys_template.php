@@ -1,8 +1,9 @@
 <?php
 defined('TYPO3') or die('Access denied.');
-call_user_func(function() {
+call_user_func(function()
+{
     /**
-     * Extension key
+     * Temporary variables
      */
     $extensionKey = 'winkelbach_distribution';
 

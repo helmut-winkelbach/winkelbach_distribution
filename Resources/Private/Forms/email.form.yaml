@@ -17,12 +17,12 @@ finishers:
       translation:
         language: default
       recipients:
-        info@winkelbach-web.de: 'Bahá’í-Gemeinde Erfurt'
+        info@winkelbach-web.de: 'Winkelbach-Familie Erfurt'
       addHtmlPart: true
     identifier: EmailToReceiver
   -
     options:
-      subject: 'Bahá’í-Erfurt: Ich möchte die neuen Blog-Artikel erhalten'
+      subject: 'Winkelbach-Familie Erfurt: Ich möchte die neuen Blog-Artikel erhalten'
       senderAddress: '{text-2}'
       senderName: '{text-2}'
       attachUploads: false

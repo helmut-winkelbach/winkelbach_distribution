@@ -14,7 +14,6 @@ TCEMAIN {
    }
 }
 
-/*
 TCEMAIN.table.tt_content {
 disablePrependAtCopy = 1
 disableHideAtCopy = 1
@@ -37,4 +36,3 @@ TCEMAIN.linkHandler {
 #        addParams = onclick="jumpToUrl('?act=mail&linkAttributes[title]=Opens email manager to send an email&linkAttributes[class]=mail&linkAttributes[params]=');return false;"
     }
 }
-*/

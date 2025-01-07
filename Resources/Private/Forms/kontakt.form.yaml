@@ -19,7 +19,7 @@ finishers:
         info@winkelbach-web.de: Winkelbach-Familie
       addHtmlPart: true
       useFluidEmail: false
-      title: 'Winkelbach-Familie Gäsetebuch'
+      title: 'Winkelbach-Familie'
     identifier: EmailToReceiver
   -
     options:
@@ -35,7 +35,7 @@ finishers:
         '{email}': '{name}'
       addHtmlPart: true
       useFluidEmail: false
-      title: 'Winkelbach-Familie Gäsetebuch'
+      title: 'Winkelbach-Familie'
     identifier: EmailToSender
   -
     options:

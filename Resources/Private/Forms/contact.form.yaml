@@ -2,7 +2,7 @@ renderingOptions:
   submitButtonLabel: Submit
 type: Form
 identifier: contact
-label: Contact Form
+label: Contact
 prototypeName: standard
 finishers:
   -
@@ -12,7 +12,7 @@ finishers:
       senderName: '{name}'
       attachUploads: false
       templateRootPaths:
-        20: 'EXT:winkelbach_distribution/Resources/Private/Frontend/Templates/Finishers/Kontakt/Receiver/'
+        20: 'EXT:winkelbach_distribution/Resources/Private/Frontend/Templates/Finishers/Kontakt-G/Receiver/'
       translation:
         language: default
       recipients:
@@ -28,7 +28,7 @@ finishers:
       senderName: Winkelbach-Family
       attachUploads: false
       templateRootPaths:
-        30: 'EXT:winkelbach_distribution/Resources/Private/Frontend/Templates/Finishers/Kontakt/Sender/'
+        30: 'EXT:winkelbach_distribution/Resources/Private/Frontend/Templates/Finishers/Kontakt-G/Sender/'
       translation:
         language: default
       recipients:
@@ -48,7 +48,7 @@ renderables:
       previousButtonLabel: 'Previous step'
       nextButtonLabel: 'Next step'
     identifier: page-1
-    label: 'Your message'
+    label: 'Your guestbook entry'
     type: Page
     renderables:
       -

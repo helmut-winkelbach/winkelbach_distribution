@@ -3,26 +3,18 @@
 /**
  * Extension Manager/Repository config file for ext "winkelbach_distribution".
  */
-$EM_CONF['winkelbach_distribution'] = [
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Winkelbach-Distribution',
     'description' => 'Sitepackage',
     'category' => 'templates',
-    'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 1,
-    'author' => 'Helmut Winkelbach',
-    'author_email' => 'helmut@winkelbach-web.de',
-    'author_company' => 'Winkelbach WebDesign',
-    'version' => '3.1.0',
     'constraints' => [
         'depends' => [
-            'php' => '8.0.0-8.3.99',
-            'typo3' => '11.5.0-12.4.99',
-            'backend' => '11.5.0-12.4.99',
-            'frontend' => '11.5.0-12.4.99',
-            'rte_ckeditor' => '11.5.0-12.4.99',
-            'fluid_styled_content' => '11.5.0-12.4.99',
+            'php' => '8.2.0-8.4.99',
+            'typo3' => '12.4.0-13.4.99',
+            'backend' => '12.4.0-13.4.99',
+            'frontend' => '12.4.0-13.4.99',
+            'rte_ckeditor' => '12.4.0-13.4.99',
+            'fluid_styled_content' => '12.4.0-13.4.99',
         ],
         'conflicts' => [
         ],
@@ -32,4 +24,12 @@ $EM_CONF['winkelbach_distribution'] = [
             'WinkelbachWebdesign\\WinkelbachDistribution\\' => 'Classes',
         ],
     ],
+    'state' => 'stable',
+    'uploadfolder' => 0,
+    'createDirs' => '',
+    'clearCacheOnLoad' => 1,
+    'author' => 'Helmut Winkelbach',
+    'author_email' => 'helmut@winkelbach-web.de',
+    'author_company' => 'Winkelbach WebDesign',
+    'version' => '4.0.0',
 ];

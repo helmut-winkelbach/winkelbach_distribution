@@ -12,19 +12,19 @@
                         <f:if condition="{item.image.0}">
                             <div class="timeline-item-image">
                                 <f:variable name="imageConfig">{settings.responsiveimages.contentelements.timeline}</f:variable>
-                                <WinkelbachWebdesign\WinkelbachDistribution:data.imageVariants as="variants" variants="{currentVariants}" multiplier="{imageConfig.multiplier}" gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
+                                <bk2k:data.imageVariants as="variants" variants="{currentVariants}" multiplier="{imageConfig.multiplier}" gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
                                 <f:render partial="Media/Gallery" arguments="{files: item.image, data: item.data, settings: settings, variants: variants}" />
                             </div>
                         </f:if>
                         <div class="timeline-item-marker{f:if(condition:item.icon,then:' timeline-item-icon')}">
                             <span>
                                 <f:if condition="{item.icon}">
-                                    <WinkelbachWebdesign\WinkelbachDistribution:icon icon="{item.icon}" />
+                                    <bk2k:icon icon="{item.icon}" />
                                 </f:if>
                             </span>
                         </div>
                         <div class="timeline-item-date">
-                            <time datetime="{item.data.date -> f:format.date(format: '%d. %B %Y')}">
+                            <time datetime="{item.data.date -> f:format.date(format: '%Y-%m-%d %H:%M')}">
                                 <f:format.date format="{settings.timeline.date.format}">{item.data.date}</f:format.date>
                             </time>
                         </div>

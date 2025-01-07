@@ -5,9 +5,8 @@ config.additionalHeaders {
   40.header = X-Powered-By: nothing
   50.header = strict-transport-security: max-age=31536000; includeSubDomains; preload;
   60.header = Referrer-Policy: strict-origin
-#  70.header = Content-Security-Policy: default-src 'unsafe-inline' 'unsafe-eval'; script-src 'unsafe-inline' 'unsafe-eval' https://www.1.winkelbach-web.de; font-src data: 'self'; style-src 'unsafe-inline' https://www.1.winkelbach-web.de; img-src 'self' 'unsafe-inline'; frame-src https://www.1.winkelbach-web.de; connect-src https://www.1.winkelbach-web.de
-  80.header = Permissions-Policy: fullscreen=(self "https://www.winkelbach-web.de"), geolocation=*, camera=()
-#  90.header = X-Robots-Tag: noindex,nofollow
+  70.header = Content-Security-Policy: img-src 'self' https: data:; 
+  80.header = Permissions-Policy: fullscreen=(self "https://www.historyby.winkelbach-web.de/"), geolocation=*, camera=()
 }
 
 #### CONFIG ####
@@ -62,7 +61,7 @@ config {
 	concatenateJs = {$config.concatenateJs}
 	concatenateCss = {$config.concatenateCss}
 #	preloadImages = 0
-	noPageTitle = 2
+	noPageTitle = 0
 	htmlSpecialChars = 1
 	pageTitleSeparator = -
 	pageTitleSeparator.noTrimWrap = | | |

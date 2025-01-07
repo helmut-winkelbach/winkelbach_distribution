@@ -15,7 +15,14 @@ class Tca
 {
     public function timelineItemLabel(array &$parameters): void
     {
+        if (!isset($parameters['table'])
+            || $parameters['table'] !== 'tx_bootstrappackage_timeline_item'
+            || !isset($parameters['row']['uid'])) {
+            return;
+        }
+
         $record = BackendUtility::getRecord($parameters['table'], $parameters['row']['uid']) ?? [];
-        $parameters['title'] = $record['date'] . ' - ' . $record['header'];
+        $parameters['title'] = ($record['date'] ?? '') . ' - ' . ($record['header'] ?? '');
     }
 }
+

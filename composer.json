@@ -1,7 +1,8 @@
 {
     "name": "winkelbach-webdesign/winkelbach-distribution",
-    "description": "Sitepackage",
     "type": "typo3-cms-extension",
+    "description": "Sitepackage",
+    "homepage": "https://www.winkelbach-web.de/sign/",
     "authors": [
         {
             "name": "Helmut Winkelbach",
@@ -11,16 +12,16 @@
     "license": [
         "MIT"
     ],
-    "keywords": [
-        "TYPO3 CMS",
-        "Sitepackage"
-    ],
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
     "require": {
-        "typo3/cms-core": "^11.5 || ^12.4",
-        "typo3/cms-core": "^11.5 || ^12.4",
-        "typo3/cms-frontend": "^11.5 || ^12.4",
-        "typo3/cms-rte-ckeditor": "^11.5 || ^12.4",
-        "typo3/cms-fluid-styled-content": "^11.5 || ^12.4"
+        "php": "^8.3",
+        "typo3/cms-backend": "^12.4 || ^13.4.99",
+        "typo3/cms-beuser": "^12.4 || ^13.4.99",
+        "typo3/cms-core": "^12.4 || ^13.4.99",
+        "typo3/cms-frontend": "^12.4 || ^13.4.99",
+        "typo3/cms-rte-ckeditor": "^12.4 || ^13.4.99",
+        "typo3/cms-fluid-styled-content": "^12.4 || ^13.4.99"
     },
     "autoload": {
         "psr-4": {
@@ -29,8 +30,7 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "winkelbach_distribution",
-            "web-dir": ".Build/public"
+            "extension-key": "winkelbach_distribution"
         }
     }
 }

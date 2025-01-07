@@ -45,7 +45,7 @@ class FlexFormProcessor implements DataProcessorInterface
     {
         // The field name to process
         $fieldName = $cObj->stdWrapValue('fieldName', $processorConfiguration);
-        if (empty($fieldName)) {
+        if ($fieldName === '') {
             $fieldName = 'pi_flexform';
         }
         if (!$processedData['data'][$fieldName]) {
