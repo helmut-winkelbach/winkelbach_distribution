@@ -28,6 +28,7 @@
             "WinkelbachWebdesign\\WinkelbachDistribution\\": "Classes/"
         }
     },
+    "minimum-stabilty": dev,
     "extra": {
         "typo3/cms": {
             "extension-key": "winkelbach_distribution"
