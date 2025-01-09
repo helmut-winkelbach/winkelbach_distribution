@@ -1,3 +1,3 @@
-Sitepackage for the project "winkelbach-distribution" History BY
+Sitepackage for the project "winkelbach-distribution" TYPO3 13 for History BY
 ================================================================
 
