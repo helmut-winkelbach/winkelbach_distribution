@@ -15,9 +15,7 @@
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/lib.metanav.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/lib.rootline.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/lib.subnavigation.typoscript'
-/*
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/Timeline.typoscript'
-*/
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Helper/DynamicContent.typoscript'
 
 @import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
@@ -97,7 +95,7 @@ page {
 
     includeCSS {
   fontawesome = {$resDir}/Resources/Public/Css/Fontawesome/fontawesome.css
-  fontawesomesolid = {$resDir}/Resources/Public/Css/Fontawesome/solid.css
+  fontawesomesolid = {$resDir}/Resources/Public/Css/Fontawesome/regular.css
   winkelbach_distribution_layout = {$resDir}/Resources/Public/Css/mystyles.css
     }
 

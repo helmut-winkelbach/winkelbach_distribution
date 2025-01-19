@@ -18,7 +18,6 @@ page.theme.copyright.text = &nbsp;<a href="mailto:info@winkelbach-web.de?subject
 plugin.bootstrap_package_contentelements {
     timeline {
         date {
-            # cat=bootstrap package: content elements/180_contentelement/001_date_format; type=string; label=Date Format
             format = %B %e, %Y
         }
     }

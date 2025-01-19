@@ -1,7 +1,7 @@
 lib.contentElement = FLUIDTEMPLATE
 lib.contentElement {
 	templateRootPaths = {$resDir}/Resources/Private/Templates/
-	file = {$resDir}/Resources/Private/Templates/Default.html
+	file = {$resDir}/Resources/Private/Templates/ContentElements/Timeline.html
     settings {
         timeline {
             date {
