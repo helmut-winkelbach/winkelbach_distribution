@@ -116,7 +116,6 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
-                'format' => 'date',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -158,7 +157,6 @@ return [
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'datetime',
-                'format' => 'time',
                 'nullable' => true,
             ],
             'l10n_mode' => 'exclude',
