@@ -1,4 +1,4 @@
-#### CONSTANTS winkelbach-web.de/ 12 ###
+#### CONSTANTS winkelbach-web.de/ 13 ###
 siteURL = https://www.historyby.winkelbach-web.de/
 siteName = The Origins of the Bahá’í Community in Belarus
 rootId = 1
@@ -23,35 +23,6 @@ plugin.bootstrap_package_contentelements {
     }
 }
 
-############################################
-#### CTYPE: BOOTSTRAP PACKAGE ACCORDION ####
-
-tt_content.accordion >
-tt_content.accordion =< lib.contentElement
-tt_content.accordion {
-
-    templateName = Accordion
-    dataProcessing {
-        10 = BK2K\BootstrapPackage\DataProcessing\FlexFormProcessor
-        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-        20 {
-            table = tx_bootstrappackage_accordion_item
-            pidInList.field = pid
-            where {
-                data = field:uid
-                intval = 1
-                wrap = tt_content=|
-            }
-            orderBy = sorting
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = media
-                }
-            }
-        }
-    }
-}
 ### RESPONSIVE IMAGES ###
 lib.contentElement.settings.responsiveimages.contentelements {
     accordion {
@@ -115,7 +86,7 @@ lib.contentElement.settings.responsiveimages.contentelements {
 }
 
 #### DEPENDENCIES ####
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+@import "EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript"
 
 resDir = EXT:winkelbach_distribution
 
