@@ -123,8 +123,13 @@ page.meta.geoPositionLongitude = 10.886641
 page.meta.geoPlacename = Erfurt
 page.meta.geoRegion = Deutschland
 page.meta.compatible = IE=edge
+#page.meta.robots = index,follow
 page.meta.robots = noindex,nofollow
-page.meta.viewport = width=device-width, initial-scale=1
+#page.meta.viewport = width=device-width, initial-scale=1
+page.meta.viewport = width=device-width, initial-scale=1, minimum-scale=1
+page.meta.apple-mobile-web-app-capable = no
+page.meta.google = notranslate
+page.meta.google-site-verification =
 
 [siteLanguage("locale") == "ru_RU.UTF-8"]
 [siteLanguage("title") == "Русский"]

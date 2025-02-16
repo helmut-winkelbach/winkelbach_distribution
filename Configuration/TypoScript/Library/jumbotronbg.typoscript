@@ -42,8 +42,8 @@ lib.jumbotronbgXSmall {
   }
 }
 
-page.headerData.131313 = COA
-page.headerData.131313 {
+page.headerData.13131313 = COA
+page.headerData.13131313 {
   5 = TEXT
   5.value = <style>
   10 < lib.jumbotronbgXSmall

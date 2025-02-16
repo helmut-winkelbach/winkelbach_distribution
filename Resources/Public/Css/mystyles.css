@@ -1342,7 +1342,7 @@ h5{font-size:110%}
 }
 
 @media screen and (max-width:767px){ 
-html,body{font-size:15px}
+html,body{font-size:17px}
 .jumbotron{min-height:200px}
 .jumbotron div.ce-bodytext p {margin-top:5rem;right:10px;width:90%;line-height:110%;font-size:90%;font-weight:500}
 .breadcrumb{line-height:110%}
@@ -1362,7 +1362,7 @@ content-container{margin:0;padding:0 .5em;}
 }
 
 @media screen and (max-width:481px){
-html,body{font-size:15px}
+html,body{font-size:1em}
 .jumbotron{min-height:150px}
 .jumbotron div.ce-bodytext p {margin-top:2rem;line-height:100%;font-size:100%}
 div.copyright{font-size:90%;padding:6px}
@@ -1716,6 +1716,8 @@ img.image-embed-item{max-width:100%;height:auto}
 }
 
 @media screen and (max-width:481px){
+html,body{font-size:1em}
+.logo a img{position:absolute;top:10px;left:3%;z-index:9999;width:50px;height:50px}
 }
 
 .responsive-video{position:relative;padding-bottom:55%;padding-top:15px;height:0;overflow:hidden;margin:0 auto}

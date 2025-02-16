@@ -20,6 +20,52 @@
                 <source>Pages Nav_icon</source>
             </trans-unit>
             
+            <trans-unit id="content_element.accordion">
+                <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="content_element.accordion.description">
+                <source>Insert several Accordionelement(s) with headline and text</source>
+            </trans-unit>
+            <trans-unit id="accordion_item">
+                <source>Accordion Item</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.tt_content">
+                <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.header">
+                <source>Header</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.bodytext">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.media">
+                <source>Media</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.mediaposition">
+                <source>Media position</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.imagecols">
+                <source>Columns</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.image_zoom">
+                <source>Enlarge on Click</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.mediaorient">
+                <source>Orientation</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.mediaorient.left">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.mediaorient.top">
+                <source>Top</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.mediaorient.right">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="accordion_item.mediaorient.bottom">
+                <source>Bottom</source>
+            </trans-unit>
+
             <trans-unit id="content_element.timeline">
                 <source>Timeline</source>
             </trans-unit>

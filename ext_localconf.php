@@ -10,7 +10,6 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['winkelbach_distribution'] = 'EXT:
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig ('@import \'EXT:winkelbach_distribution/Configuration/TsConfig/Page/All.tsconfig\'');
 
-
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 $iconRegistry->registerIcon(
     'systeminformation-bootstrappackage',
