@@ -37,7 +37,6 @@ TCEFORM.tt_content {}
 #	space_after_class {
 #		removeItems = extra-small,extra-large
 #	}
-}
 /*
 TCEFORM.tt_content.frame_class.addItems {
 	greybox = graue Box

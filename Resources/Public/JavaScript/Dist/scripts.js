@@ -1,5 +1,5 @@
 /*!
- * Winkelbach-Distribution v1.0.0 (https://www.winkelbach-web.de/sign/)
+ * Winkelbach-Distribution v3.0.0 (https://www.winkelbach-web.de/sign/)
  * Copyright 2017-2022 Helmut Winkelbach
  * Licensed under the GPL-2.0-or-later license
  */

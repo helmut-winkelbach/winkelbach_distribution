@@ -10,10 +10,11 @@
 return [
     'ctrl' => [
         'label' => 'header',
-        'label_userFunc' => WinkelbachWebdesign\WinkelbachDistribution\Userfuncs\Tca::class . '->timelineItemLabel',
+        'label_alt' => 'bodytext',
+        'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'title' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item',
+        'title' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
@@ -23,7 +24,6 @@ return [
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'languageField' => 'sys_language_uid',
-        'default_sortby' => 'date',
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -33,20 +33,17 @@ return [
             'ignorePageTypeRestriction' => true,
         ],
         'typeicon_classes' => [
-            'default' => 'content-bootstrappackage-timeline-item',
+            'default' => 'content-bootstrappackage-accordion-item',
         ],
     ],
     'types' => [
         '1' => [
             'showitem' => '
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                date,
                 header,
                 bodytext,
-                icon_set,
-                icon_identifier,
-                icon_file,
-                image,
+                media,
+                --palette--;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaposition;mediaposition,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
@@ -69,9 +66,16 @@ return [
                 tt_content
             ',
         ],
+        'mediaposition' => [
+            'showitem' => '
+                mediaorient,
+                imagecols,
+                image_zoom,
+            ',
+        ],
         'visibility' => [
             'showitem' => '
-                hidden;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item
+                hidden;LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item
             ',
         ],
         // hidden but needs to be included all the time, so sys_language_uid is set correctly
@@ -83,12 +87,12 @@ return [
     'columns' => [
         'tt_content' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.tt_content',
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.tt_content',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tt_content',
-                'foreign_table_where' => 'AND tt_content.pid=###CURRENT_PID### AND tt_content.{#CType}=\'timeline\'',
+                'foreign_table_where' => 'AND tt_content.pid=###CURRENT_PID### AND tt_content.{#CType}=\'accordion\'',
                 'maxitems' => 1,
                 'default' => 0,
             ],
@@ -116,7 +120,6 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
-                'format' => 'date',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -142,8 +145,8 @@ return [
                         'value' => 0,
                     ],
                 ],
-                'foreign_table' => 'tx_bootstrappackage_timeline_item',
-                'foreign_table_where' => 'AND tx_bootstrappackage_timeline_item.pid=###CURRENT_PID### AND tx_bootstrappackage_timeline_item.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_bootstrappackage_accordion_item',
+                'foreign_table_where' => 'AND tx_bootstrappackage_accordion_item.pid=###CURRENT_PID### AND tx_bootstrappackage_accordion_item.sys_language_uid IN (-1,0)',
                 'default' => 0,
             ],
         ],
@@ -152,19 +155,9 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-        'date' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.date',
-            'config' => [
-                'type' => 'datetime',
-                'dbType' => 'datetime',
-                'required' => true,
-            ],
-            'l10n_mode' => 'exclude',
-        ],
         'header' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.header',
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.header',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -173,7 +166,7 @@ return [
             ],
         ],
         'bodytext' => [
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.bodytext',
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.bodytext',
             'l10n_mode' => 'prefixLangTitle',
             'l10n_cat' => 'text',
             'config' => [
@@ -184,73 +177,88 @@ return [
                 'enableRichtext' => true,
             ],
         ],
-        'icon_set' => [
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.icon_set',
-            'onChange' => 'reload',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'itemsProcFunc' => 'WinkelbachWebdesign\WinkelbachDistribution\Service\IconService->getIconSetItems',
-            ],
-            'l10n_mode' => 'exclude',
-        ],
-        'icon_identifier' => [
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.icon_identifier',
-            'displayCond' => 'FIELD:icon_set:REQ:true',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'itemsProcFunc' => 'WinkelbachWebdesign\WinkelbachDistribution\Service\IconService->getIconItems',
-                'itemsProcConfig' => [
-                    'iconSetField' => 'icon_set',
-                ],
-                'fieldWizard' => [
-                    'selectIcons' => [
-                        'renderType' => 'iconWizard',
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-            'l10n_mode' => 'exclude',
-        ],
-        'icon_file' => [
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.icon_file',
-            'displayCond' => 'FIELD:icon_set:REQ:false',
+        'media' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.media',
             'config' => [
                 'type' => 'file',
-                'allowed' => ['gif', 'png', 'svg'],
+                'allowed' => 'common-media-types',
+                'disallowed' => ['mp3', 'wav', 'flac', 'opus'],
                 'appearance' => [
                     'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
                 ],
-                'overrideChildTca' => [
-                    'types' => [
-                        \TYPO3\CMS\Core\Resource\FileType::IMAGE->value => [
-                            'showitem' => '--palette--;;filePalette',
-                        ],
+            ],
+        ],
+        'mediaorient' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.left',
+                        'value' => 'left',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.top',
+                        'value' => 'top',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.right',
+                        'value' => 'right',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.mediaorient.bottom',
+                        'value' => 'bottom',
                     ],
                 ],
-                'minitems' => 0,
-                'maxitems' => 1,
+                'default' => 'left',
             ],
             'l10n_mode' => 'exclude',
         ],
-        'image' => [
+        'imagecols' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:timeline_item.image',
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.imagecols',
             'config' => [
-                'type' => 'file',
-                'allowed' => 'common-image-types',
-                'minitems' => 0,
-                'maxitems' => 1,
-                'overrideChildTca' => [
-                    'types' => [
-                        \TYPO3\CMS\Core\Resource\FileType::IMAGE->value => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                        ],
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => '1',
+                        'value' => 1,
+                    ],
+                    [
+                        'label' => '2',
+                        'value' => 2,
+                    ],
+                    [
+                        'label' => '3',
+                        'value' => 3,
+                    ],
+                    [
+                        'label' => '4',
+                        'value' => 4,
+                    ],
+                    [
+                        'label' => '5',
+                        'value' => 5,
+                    ],
+                    [
+                        'label' => '6',
+                        'value' => 6,
                     ],
                 ],
+                'default' => 2,
+            ],
+            'l10n_mode' => 'exclude',
+        ],
+        'image_zoom' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:winkelbach_distribution/Resources/Private/Language/Backend.xlf:accordion_item.image_zoom',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
             ],
         ],
     ],

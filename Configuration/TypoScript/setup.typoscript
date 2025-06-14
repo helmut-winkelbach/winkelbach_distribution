@@ -1,8 +1,7 @@
 ### Setup Root Template 13 LTS ###
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/0010_config.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/0020_page.typoscript'
-
-#@import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/0021_page.meta.typoscript'
+@import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/0021_page.meta.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/jumbotronbg.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/Container.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/ext.search.typoscript'
@@ -15,9 +14,8 @@
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/lib.metanav.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/lib.rootline.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/lib.subnavigation.typoscript'
-/*
+@import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/Accordion.typoscript'
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Library/Timeline.typoscript'
-*/
 @import 'EXT:winkelbach_distribution/Configuration/TypoScript/Helper/DynamicContent.typoscript'
 
 @import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
@@ -91,13 +89,12 @@ page {
       }
      }
     }
-
     includeCSSLibs {
     }
 
     includeCSS {
   fontawesome = {$resDir}/Resources/Public/Css/Fontawesome/fontawesome.css
-  fontawesomesolid = {$resDir}/Resources/Public/Css/Fontawesome/solid.css
+  fontawesomesolid = {$resDir}/Resources/Public/Css/Fontawesome/regular.css
   winkelbach_distribution_layout = {$resDir}/Resources/Public/Css/mystyles.css
     }
 
@@ -122,6 +119,8 @@ page {
 	40.async = 1
   media2click = {$resDir}/Resources/Public/JavaScript/media2click.js
   media2click.forceOnTop = 1
+  accordion  = {$resDir}/Resources/Public/JavaScript/accordion.min.js
+	accordion.disableCompression = 1
 	lightbox = {$resDir}/Resources/Public/JavaScript/lightbox.min-EN.js
 	lightbox.disableCompression = 1
 }
